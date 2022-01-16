@@ -29,7 +29,8 @@ SECRET_KEY = get_random_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1","localhost","0.0.0.0","vndc-vnntu.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost",
+                 "0.0.0.0", "vndc-vnntu.herokuapp.com"]
 
 
 # Application definition
@@ -146,7 +147,7 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 
 EMAIL_HOST_USER = "nednguyen75@gmail.com"
-EMAIL_HOST_PASSWORD = "Ned130702"
+EMAIL_HOST_PASSWORD = "puyaccqdorpskkes"
 
 EMAIL_USE_TLS = True
 
@@ -154,6 +155,6 @@ EMAIL_USE_TLS = True
 HOST_URL = "https://vndc-vnntu.herokuapp.com"
 
 # heroku config
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
-db_from_env=dj_database_url.config(conn_max_age=600)
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES["default"].update(db_from_env)
