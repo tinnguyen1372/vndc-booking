@@ -38,6 +38,9 @@ body {
   margin-bottom: 30px;
 }
 
+.invi{
+  display: none;
+}
 .seat {
   background-color: #444451;
   height: 12px;
