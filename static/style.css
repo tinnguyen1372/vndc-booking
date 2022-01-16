@@ -38,9 +38,7 @@ body {
   margin-bottom: 30px;
 }
 
-.invi{
-  display: none;
-}
+
 .seat {
   background-color: #444451;
   height: 12px;
@@ -75,7 +73,9 @@ body {
   cursor: default;
   transform: scale(1);
 }
-
+.invi{
+  opacity: 0;
+}
 .showcase {
   background: rgba(0, 0, 0, 0.1);
   padding: 5px 10px;
