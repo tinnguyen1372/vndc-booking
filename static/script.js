@@ -26,7 +26,7 @@ function updateSelectedCount() {
 
   count.innerText = selectedSeatsCount;
   total.innerText = selectedSeatsCount * ticketPrice;
-  
+
   setMovieData(movieSelect.selectedIndex, movieSelect.value);
 }
 
@@ -54,6 +54,7 @@ movieSelect.addEventListener('change', e => {
   ticketPrice = +e.target.value;
   setMovieData(e.target.selectedIndex, e.target.value);
   updateSelectedCount();
+  refreshSeat()
 });
 
 // Seat click event

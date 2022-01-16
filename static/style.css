@@ -116,6 +116,6 @@ p.text span {
 }
 
 .purchase_btn{
-  padding: 1%;
+  padding: 0.2 em;
   cursor:pointer;
 }
