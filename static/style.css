@@ -73,7 +73,7 @@ body {
   cursor: default;
   transform: scale(1);
 }
-.invi{
+.seat.invi{
   opacity: 0;
 }
 .showcase {
