@@ -5,8 +5,9 @@
 }
 
 body {
-  background-color: #242333;
   color: #fff;
+  background-color: #242333;
+  background-size:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,4 +113,9 @@ p.text {
 
 p.text span {
   color: #6feaf6;
+}
+
+.purchase_btn{
+  padding: 1%;
+  cursor:pointer;
 }
