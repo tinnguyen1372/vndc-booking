@@ -19,7 +19,6 @@ body {
 .button {
 	pointer-events: auto;
 	cursor: pointer;
-	background: #e7e7e7;
 	border: none;
 	padding: 0.75em 1.5em;
 	margin: 0;
@@ -41,7 +40,7 @@ body {
 .button--pan {
 	font-family: aktiv-grotesk-extended, sans-serif;
 	font-weight: 700;
-	border: 2px solid #000;
+	border: 2px #000;
 	border-radius: 2.5rem;
 	overflow: hidden;
 	color: #fff;
@@ -86,7 +85,7 @@ body {
 }
 
 .seat.occupied {
-  background-color: #aca5a1;
+  background-color: hsla(20, 4%, 27%, 0.163);
 }
 p.text{
   color:#000;
@@ -457,8 +456,8 @@ p.text {
   }
 
   .movie-container {
-    margin: 10px 0;
-    margin-top: 40px;
+    margin: 5px 0;
+    margin-top: 50px;
   }
   
   .movie-container select {
@@ -529,7 +528,7 @@ p.text {
     background-color: #fff;
     height: 45px;
     width: 100%;
-    margin: 10px 0 17px;
+    margin: 5px 0 17px;
     transform: rotateX(45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
   }
@@ -539,7 +538,7 @@ p.text {
     font-size: 18px;
   }
   .purchase_btn{
-    transform: translateX(-5px);
+    transform: translateX(-10px);
   }
 }
 
