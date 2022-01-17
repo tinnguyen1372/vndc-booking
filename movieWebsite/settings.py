@@ -152,7 +152,7 @@ EMAIL_HOST_PASSWORD = "puyaccqdorpskkes"
 EMAIL_USE_TLS = True
 
 # website config
-HOST_URL = "https://vndc-vnntu.herokuapp.com"
+HOST_URL = "https://vnntu-vndc.herokuapp.com"
 
 # heroku config
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
