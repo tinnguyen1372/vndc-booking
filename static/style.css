@@ -16,17 +16,129 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .movie-container {
+    margin: 6px 0;
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 10px;
+    margin-left: 5px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 500px;
+    margin-bottom: 10px;
+  }
+  
+  
+  .seat {
+    background-color: #444451;
+    height: 6px;
+    width: 8px;
+    margin: 2px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  
+  .seat.selected {
+    background-color: #6feaf6;
+  }
+  
+  .seat.occupied {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 6px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 6px;
+  }
+  
+  .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  .seat.invi{
+    opacity: 0;
+  }
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+  }
+  
+  .showcase li small {
+    margin-left: 2px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .screen {
+    background-color: #fff;
+    height: 20px;
+    width: 100%;
+    margin: 8px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  p.text {
+    margin: 5px 0;
+    font-size: 10px;
+  }
+  
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  .purchase_btn{
+    padding: 0.2 em;
+    cursor:pointer;
+  }
+}
 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) { 
 .movie-container {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .movie-container select {
   background-color: #fff;
   border: 0;
   border-radius: 5px;
-  font-size: 14px;
-  margin-left: 10px;
+  font-size: 10px;
+  margin-left: 6px;
   padding: 5px 15px 5px 15px;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -34,18 +146,18 @@ body {
 }
 
 .container {
-  perspective: 1000px;
-  margin-bottom: 30px;
+  perspective: 450px;
+  margin-bottom: 14px;
 }
 
 
 .seat {
   background-color: #444451;
-  height: 12px;
-  width: 15px;
-  margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  height: 6px;
+  width: 8px;
+  margin: 2px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .seat.selected {
@@ -57,11 +169,11 @@ body {
 }
 
 .seat:nth-of-type(2) {
-  margin-right: 18px;
+  margin-right: 10px;
 }
 
 .seat:nth-last-of-type(2) {
-  margin-left: 18px;
+  margin-left: 10px;
 }
 
 .seat:not(.occupied):hover {
@@ -90,7 +202,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 0 6px;
 }
 
 .showcase li small {
@@ -103,15 +215,16 @@ body {
 
 .screen {
   background-color: #fff;
-  height: 70px;
+  height: 34px;
   width: 100%;
-  margin: 15px 0;
+  margin: 12px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
 p.text {
   margin: 5px 0;
+  font-size: 10px;
 }
 
 p.text span {
@@ -122,3 +235,339 @@ p.text span {
   padding: 0.2 em;
   cursor:pointer;
 }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .movie-container {
+    margin: 12px 0;
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 8px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 600px;
+    margin-bottom: 18px;
+  }
+  
+  
+  .seat {
+    background-color: #444451;
+    height: 8px;
+    width: 10px;
+    margin: 3px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+  
+  .seat.selected {
+    background-color: #6feaf6;
+  }
+  
+  .seat.occupied {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 12px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 12px;
+  }
+  
+  .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  .seat.invi{
+    opacity: 0;
+  }
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+  }
+  
+  .showcase li small {
+    margin-left: 2px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .screen {
+    background-color: #fff;
+    height: 44px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  p.text {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+  
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  .purchase_btn{
+    padding: 0.2 em;
+    cursor:pointer;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .movie-container {
+    margin: 16px 0;
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-left: 8px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 800px;
+    margin-bottom: 24px;
+  }
+  
+  
+  .seat {
+    background-color: #444451;
+    height: 10px;
+    width: 12px;
+    margin: 3px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .seat.selected {
+    background-color: #6feaf6;
+  }
+  
+  .seat.occupied {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 14px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 14px;
+  }
+  
+  .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  .seat.invi{
+    opacity: 0;
+  }
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+  }
+  
+  .showcase li small {
+    margin-left: 2px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .screen {
+    background-color: #fff;
+    height: 56px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  p.text {
+    margin: 5px 0;
+    font-size: 12px;
+  }
+  
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  .purchase_btn{
+    padding: 0.2 em;
+    cursor:pointer;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .movie-container {
+    margin: 20px 0;
+  }
+  
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+  }
+  
+  
+  .seat {
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .seat.selected {
+    background-color: #6feaf6;
+  }
+  
+  .seat.occupied {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 18px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+  
+  .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  .seat.invi{
+    opacity: 0;
+  }
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .showcase li small {
+    margin-left: 2px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .screen {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  p.text {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  
+  p.text span {
+    color: #6feaf6;
+  }
+  
+  .purchase_btn{
+    padding: 0.2 em;
+    cursor:pointer;
+  }
+}
+
+
+
+
+
+
+

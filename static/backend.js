@@ -13,46 +13,46 @@ async function contactAPI(url, body) {
     return response.json()
 }
 
-// function refreshSeat() {
-const movie_title = movieSelect.options[movieSelect.selectedIndex].id
+function refreshSeat() {
+    const movie_title = movieSelect.options[movieSelect.selectedIndex].id
 
-contactAPI("/occupied/", { movie_title }).then(data => {
-    const occupied_seat = data['occupied_seats']
-    const movie_title = data["movie"].replace(/\s/g, '')
+    contactAPI("/occupied/", { movie_title }).then(data => {
+        const occupied_seat = data['occupied_seats']
+        const movie_title = data["movie"].replace(/\s/g, '')
 
-    const seat_LocalStorage = localStorage.getItem('selectedSeats') ? JSON.parse(localStorage.getItem('selectedSeats')) : null
-    const movie_index = localStorage.getItem("selectedMovieIndex")
+        const seat_LocalStorage = localStorage.getItem('selectedSeats') ? JSON.parse(localStorage.getItem('selectedSeats')) : null
+        const movie_index = localStorage.getItem("selectedMovieIndex")
 
-    all_seats.forEach(seat => {
-        seat.classList.remove("occupied")
+        all_seats.forEach(seat => {
+            seat.classList.remove("occupied")
+        })
+
+        const LS_movie = movieSelect.options[movie_index].textContent.replace(/\s/g, '')
+
+        if (LS_movie === movie_title) {
+            if (occupied_seat !== null && occupied_seat.length > 0) {
+                all_seats.forEach((seat, index) => {
+                    if (occupied_seat.indexOf(index) > -1) {
+                        seat.classList.add('occupied')
+                        seat.classList.remove('selected')
+                    }
+                })
+            }
+
+            if (seat_LocalStorage !== null) {
+                seat_LocalStorage.forEach((seat, index) => {
+                    if (occupied_seat.includes(seat)) {
+                        seat_LocalStorage.splice(index, 1)
+                        localStorage.setItem("selectedSeats", seat_LocalStorage)
+                    }
+                })
+            }
+        }
+        updateSelectedCount()
     })
+}
 
-    const LS_movie = movieSelect.options[movie_index].textContent.replace(/\s/g, '')
-
-    if (LS_movie === movie_title) {
-        if (occupied_seat !== null && occupied_seat.length > 0) {
-            all_seats.forEach((seat, index) => {
-                if (occupied_seat.indexOf(index) > -1) {
-                    seat.classList.add('occupied')
-                    seat.classList.remove('selected')
-                }
-            })
-        }
-
-        if (seat_LocalStorage !== null) {
-            seat_LocalStorage.forEach((seat, index) => {
-                if (occupied_seat.includes(seat)) {
-                    seat_LocalStorage.splice(index, 1)
-                    localStorage.setItem("selectedSeats", seat_LocalStorage)
-                }
-            })
-        }
-    }
-    updateSelectedCount()
-})
-// }
-
-// refreshSeat()
+refreshSeat()
 
 cta_btn.addEventListener("click", e => {
     const movie_title = movieSelect.options[movieSelect.selectedIndex].id
