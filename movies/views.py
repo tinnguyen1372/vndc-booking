@@ -45,8 +45,8 @@ def makeConfirmation(request):
     cost = Movie.objects.get(title=movie_title).price
 
     referrer = uuid.uuid4().hex[:6].upper()
-    # redirect_url = "/occupant_info/"
-    redirect_url = "/payment_confirm/"
+    redirect_url = "/occupant_info/"
+    # redirect_url = "/payment_confirm/"
     PaymentIntent.objects.create(referrer=referrer,
                                  movie_title=movie_title,
                                  seat_number=seat_numbers)
