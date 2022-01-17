@@ -7,61 +7,55 @@
 
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <!--320-->
-
-    <!--TRACKING END-->
+    <link rel="stylesheet" href="../static/form.css" />
     <title>Confirmation of VNDC Ticket - VNNTU</title>
 
 </head>
 
-<body class="paystack-container" data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="">
-
-    <div id="payment-page-pay" class="paystack-page">
-        <div class="header">
-            <div class="company-logo">
-                <img id="company-logo-img" src="./form_files/paystack.jpg" alt="Business Logo">
-            </div>
+<body class="page-container">
+    <div id="payment-page-pay" class="page">
+        <img id="company-logo-img" src="../static/media/VNNTU_logo.png" alt="VNNTU Logo">
+        <div class="card">
             <div class="page-info">
-                <h3 id="page-name" class="page-name">Confirmation of Movie Ticket</h3>
-                <p class="company-name">BY <span id="company-name">VNNTU</span></p>
+                <h3 id="page-name" class="page-name">VNDC2022 Wanderlust</h3>
             </div>
-            <div class="page-description">
-                <span id="page-description">Confirmation for ticket of VNDC</span>
-            </div>
-        </div>
-        <div class="body">
-            <form id="payment-form" name="payment-form" class="payment-form">
 
-                <div class="element-pair">
-                    <div class="element-pair-container">
-                        <div class="element-wrap">
-                            <div class="element-label"><span>First Name</span></div>
-                            <input id="customer-first-name" type="text" class="element-is-input"
-                                data-validetta="required" required="">
-                        </div>
-                        <div class="element-wrap">
-                            <div class="element-label"><span>First Name</span></div>
-                            <input id="customer-last-name" type="text" class="element-is-input"
-                                data-validetta="required" required="">
-                        </div>
-                        <div class="element-wrap">
-                            <div class="element-label"><span>Phone Number</span></div>
-                            <input id="customer-phone-number" type="text" class="element-is-input">
-                        </div>
+            <form id="payment-form" name="payment-form" class="card-form">
+                <div class="container">
+                    <div class="input">
+                        <label for="customer-first-name" class="input-label"><span>First Name</span></label>
+                        <input id="customer-first-name" type="text" class="input-field" data-validetta="required"
+                            required="">
+                    </div>
+                    <div class="input">
+                        <label for="customer-last-name" class="input-label"><span>Last Name</span></label>
+                        <input id="customer-last-name" type="text" class="input-field" data-validetta="required"
+                            required="">
+                    </div>
+                    <div class="input">
+                        <label for="customer-phone-number" class="input-label"><span>Phone number</span></label>
+                        <input id="customer-phone-number" type="text" class="input-field" data-validetta="required"
+                            required="">
+                    </div>
+                    <div class="input">
+                        <label for="customer-email" class="input-label"><span>Email</span></label>
+                        <input id="customer-email" type="email" class="input-field" data-validetta="required,email"
+                            required="">
                     </div>
                 </div>
 
-                <div class="element-wrap">
-                    <div class="element-label"><span>Email Address</span></div>
-                    <input id="customer-email" type="email" class="element-is-input" data-validetta="required,email"
-                        required="">
-                </div>
 
-                <div id="custom-fields"></div>
-                <div class="element-wrap element-wrap-for-submit">
-                    <button type="submit" id="pay-btn" class="button button-is-green">Confirm</button>
+                <div class="action">
+                    <button type="submit" id="pay-btn" class="button action-button">Confirm</button>
                 </div>
             </form>
+            <div class="card-info">
+                <!-- <p>Please contact us at <a href="https://www.facebook.com/vnntu">VNNTU Page</a> if you want cancel your
+                    seat</p> -->
+                <p>Vì số lượng chỗ ngồi có hạn,
+                    mong bạn chắc chắn sẽ tham dự buổi kịch trước khi
+                    đặt vé</p>
+            </div>
         </div>
     </div>
 

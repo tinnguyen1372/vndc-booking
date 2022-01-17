@@ -1,0 +1,136 @@
+body{
+    background-image: linear-gradient(#151e39 100%,#745768) ;
+    background-size:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Helvetica, sans-serif;
+    margin: 0;
+}
+/* .disclaimer{
+    font-size: 14px;
+    text-align: center;
+    padding: 0 1rem;
+    font-weight: 100;
+} */
+.page{
+    height: 100vh;
+}
+.page-name{
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+    margin:0 1rem 0.5rem;
+    color: #fff;
+}
+
+img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        border: 0;
+        margin:0;
+        transform: scale(0.6);
+
+}
+
+input {
+	appearance: none;
+	border-radius: 0;
+}
+
+.card {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #151e39;
+	/* border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25); */
+	padding: .75rem;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #735400;
+	line-height: 1.222;
+	
+}
+.card-form {
+	padding: 0 1rem;
+}
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+}
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	
+}
+.input-field:focus, .input-field:valid {
+    outline: 0;
+    border-bottom-color: #6658d3;
+}
+.input-field:focus.input-label, .input-field:valid.input-label {
+    color: #6658d3;
+    transform: translateY(-1.5rem);
+}
+.action {
+	margin-top: 2rem;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+
+.action-button:focus {
+    outline: 0;
+}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #8597a3;
+}
+
+.card-info a {
+    display: block;
+    color: #6658d3;
+    text-decoration: none;
+}

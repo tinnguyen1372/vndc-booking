@@ -59,10 +59,16 @@ movieSelect.addEventListener('change', e => {
 
 // Seat click event
 container.addEventListener('click', e => {
+  var selectedSeats = document.querySelectorAll('.row .seat.selected');
+  Array.from(document.querySelectorAll('.row .seat.selected')).forEach(function (el) {
+    el.classList.remove('selected');
+  });
+  updateSelectedCount;
   if (
     e.target.classList.contains('seat') &&
     !e.target.classList.contains('occupied')
   ) {
+
     e.target.classList.toggle('selected');
 
     updateSelectedCount();
@@ -71,3 +77,5 @@ container.addEventListener('click', e => {
 
 // Initial count and total set
 updateSelectedCount();
+
+//
