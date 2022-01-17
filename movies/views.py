@@ -53,7 +53,7 @@ def makeConfirmation(request):
         "amount": int(cost*len(seat_numbers))*100,
         "description": f"Confirmation for {len(seat_numbers)} ticket of {movie_title}",
         "collect_phone": True,
-        "redirect_url": f"{settings.HOST_URL}/payment-confirm/"
+        "redirect_url": f"{settings.HOST_URL}/payment_confirm/"
     }
 
     response = requests.post('https://api.paystack.co/page',
