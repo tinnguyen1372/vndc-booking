@@ -7,4 +7,3 @@ django-ipware
 requests
 celery
 redis
-setuptools==0.7.3
