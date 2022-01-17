@@ -155,4 +155,4 @@ def paymentConfirm(request):
     #     <h2>An email has been sent to your email address with your seat number</h2>\n\
     #     <h2>Thank you once again</h2>\n\
     #     <a href="/" >Click here to go to homepage</a>')
-    render(request, 'confirmation.html')
+    return render(request, 'confirmation.html')
