@@ -27,7 +27,9 @@ body {
 	position: relative;
 	display: inline-block;
 }
-
+p.text{
+  display:none !important;
+}
 .button::before,
 .button::after {
 	position: absolute;
