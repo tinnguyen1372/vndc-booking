@@ -53,7 +53,7 @@ def makeConfirmation(request):
         "amount": int(cost*len(seat_numbers))*100,
         "description": f"Confirmation for {len(seat_numbers)} ticket of {movie_title}",
         "collect_phone": True,
-        "redirect_url": f"{settings.HOST_URL}/payment_confirm/"
+        # "redirect_url": f"{settings.HOST_URL}/payment_confirm/"
     }
 
     response = requests.post('https://api.paystack.co/page',
@@ -124,7 +124,8 @@ def webhook(request):
 
 
 def paymentConfirm(request):
-    return HttpResponse('<h2>Thank you for purchasing Us....</h2>\n\
-        <h2>An email has been sent to your email address with your seat number</h2>\n\
-        <h2>Thank you once again</h2>\n\
-        <a href="/" >Click here to go to homepage</a>')
+    # return HttpResponse('<h2>Thank you for purchasing Us....</h2>\n\
+    #     <h2>An email has been sent to your email address with your seat number</h2>\n\
+    #     <h2>Thank you once again</h2>\n\
+    #     <a href="/" >Click here to go to homepage</a>')
+    render(request, 'confirmation.html')
