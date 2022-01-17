@@ -1,5 +1,5 @@
 from movies.tasks import mailing
-from django.http.response import HttpResponse, HttpResponseForbidden
+from django.http.response import HttpResponse, HttpResponseForbidden, HttpResponseRedirect
 from movies.helpers import email_customer, verify_webook
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -97,7 +97,7 @@ def occupantInfo(request):
 
             # send email
             mailing.delay(first_name, email, seat_no, movie_title)
-        return HttpResponse(200)
+        return HttpResponseRedirect('/payment_confirm/')
 
     return HttpResponseForbidden()
 
