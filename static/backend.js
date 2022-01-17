@@ -14,8 +14,8 @@ async function contactAPI(url, body) {
 }
 
 function refreshSeat() {
-    const movie_title = movieSelect.options[movieSelect.selectedIndex].id
-
+    // const movie_title = movieSelect.options[movieSelect.selectedIndex].id
+    const movie_title = 'VNDC ($1)'
     contactAPI("/occupied/", { movie_title }).then(data => {
         const occupied_seat = data['occupied_seats']
         const movie_title = data["movie"].replace(/\s/g, '')
