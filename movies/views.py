@@ -48,15 +48,17 @@ def makeConfirmation(request):
     redirect_url = "/occupant_info/"
 
     PaymentIntent.objects.create(referrer=referrer,
-                                     movie_title=movie_title,
-                                     seat_number=seat_numbers)
+                                 movie_title=movie_title,
+                                 seat_number=seat_numbers)
 
     return JsonResponse({
         "payment_url": redirect_url,
         "referrer": referrer,
     })
 
-def occupantInfo (request):
+
+@csrf_exempt
+def occupantInfo(request):
     if request.method == "GET":
         referrer = request.GET.get('referrer', '')
         context = dict()
@@ -79,25 +81,26 @@ def occupantInfo (request):
 
         for seat_no in booked_seat:
             seat = Seat.objects.create(seat_no=seat_no,
-                                        occupant_first_name=first_name,
-                                        occupant_last_name=last_name,
-                                        occupant_email=email)
+                                       occupant_first_name=first_name,
+                                       occupant_last_name=last_name,
+                                       occupant_email=email)
 
             movie.booked_seats.add(seat)
             movie.save()
 
             Payment.objects.create(first_name=first_name,
-                                    last_name=last_name,
-                                    email=email,
-                                    phone=phone_number,
-                                    movie=movie,
-                                    seat_no=seat_no)
+                                   last_name=last_name,
+                                   email=email,
+                                   phone=phone_number,
+                                   movie=movie,
+                                   seat_no=seat_no)
 
             # send email
             mailing.delay(first_name, email, seat_no, movie_title)
         return HttpResponse(200)
-    
+
     return HttpResponseForbidden()
+
 
 '''
 @csrf_exempt
