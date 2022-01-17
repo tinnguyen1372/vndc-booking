@@ -27,7 +27,7 @@ SECRET_KEY = get_random_secret_key()
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost",
                  "0.0.0.0", "vnntu-vndc.herokuapp.com"]

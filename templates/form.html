@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)https://paystack.com/pay/nbba74py51 -->
 <html lang="en">
 
 <head>
@@ -9,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <link rel="stylesheet" href="../static/form.css" />
     <title>Confirmation of VNDC Ticket - VNNTU</title>
-
 </head>
 
 <body class="page-container">
@@ -24,26 +22,26 @@
                 <div class="container">
                     <div class="input">
                         <label for="customer-first-name" class="input-label"><span>First Name</span></label>
-                        <input id="customer-first-name" type="text" class="input-field" data-validetta="required"
-                            required="">
+                        <input name="first_name" id="customer-first-name" type="text" class="input-field"
+                            data-validetta="required" required="">
                     </div>
                     <div class="input">
                         <label for="customer-last-name" class="input-label"><span>Last Name</span></label>
-                        <input id="customer-last-name" type="text" class="input-field" data-validetta="required"
-                            required="">
+                        <input name="last_name" id="customer-last-name" type="text" class="input-field"
+                            data-validetta="required" required="">
                     </div>
                     <div class="input">
                         <label for="customer-phone-number" class="input-label"><span>Phone number</span></label>
-                        <input id="customer-phone-number" type="text" class="input-field" data-validetta="required"
-                            required="">
+                        <input name="phone_number" id="customer-phone-number" type="text" class="input-field"
+                            data-validetta="required" required="">
                     </div>
                     <div class="input">
                         <label for="customer-email" class="input-label"><span>Email</span></label>
-                        <input id="customer-email" type="email" class="input-field" data-validetta="required,email"
-                            required="">
+                        <input name="email" id="customer-email" type="email" class="input-field"
+                            data-validetta="required,email" required="">
                     </div>
                 </div>
-
+                <input type="hidden" id="referrer" name="referrer" value="{{ referrer }}">
 
                 <div class="action">
                     <button type="submit" id="pay-btn" class="button action-button">Confirm</button>

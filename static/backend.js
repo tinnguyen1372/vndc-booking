@@ -66,7 +66,7 @@ cta_btn.addEventListener("click", e => {
         contactAPI("/confirmation/", data).then(res => {
             if (res["payment_url"]) {
                 // redirect the customer
-                window.location.href = res["payment_url"]
+                window.location.href = res["payment_url"] + "?referrer=" + res["referrer"]
 
             } else {
                 console.log('error')
