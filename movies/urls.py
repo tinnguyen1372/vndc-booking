@@ -6,5 +6,5 @@ urlpatterns = [
     path('occupied/', occupiedSeats, name="occupied_seat"),
     path('confirmation/', makeConfirmation, name="confirmation"),
     path('webhook/', webhook, name="webhook"),
-    path('payment_confirm', paymentConfirm, name="payment-confirm")
+    path('payment_confirm/', paymentConfirm, name="payment-confirm")
 ]
