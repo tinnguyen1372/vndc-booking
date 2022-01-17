@@ -41,7 +41,7 @@ body {
 .button--pan {
 	font-family: aktiv-grotesk-extended, sans-serif;
 	font-weight: 700;
-	border: 1px solid #000;
+	border: 2px solid #000;
 	border-radius: 2.5rem;
 	overflow: hidden;
 	color: #fff;
