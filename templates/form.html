@@ -11,7 +11,6 @@
 
     <!--TRACKING END-->
     <title>Confirmation of VNDC Ticket - VNNTU</title>
-
 </head>
 
 <body class="paystack-container" data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed="">
@@ -30,32 +29,34 @@
             </div>
         </div>
         <div class="body">
-            <form id="payment-form" name="payment-form" class="payment-form">
-
+            <form action="/occupant_info/" method="post" id="payment-form" name="payment-form" class="payment-form">
+                {% csrf_token %}
                 <div class="element-pair">
                     <div class="element-pair-container">
                         <div class="element-wrap">
                             <div class="element-label"><span>First Name</span></div>
-                            <input id="customer-first-name" type="text" class="element-is-input"
+                            <input name="first_name" id="customer-first-name" type="text" class="element-is-input"
                                 data-validetta="required" required="">
                         </div>
                         <div class="element-wrap">
-                            <div class="element-label"><span>First Name</span></div>
-                            <input id="customer-last-name" type="text" class="element-is-input"
+                            <div class="element-label"><span>Last Name</span></div>
+                            <input name="last_name" id="customer-last-name" type="text" class="element-is-input"
                                 data-validetta="required" required="">
                         </div>
                         <div class="element-wrap">
                             <div class="element-label"><span>Phone Number</span></div>
-                            <input id="customer-phone-number" type="text" class="element-is-input">
+                            <input name="phone_number" id="customer-phone-number" type="text" class="element-is-input">
                         </div>
                     </div>
                 </div>
 
                 <div class="element-wrap">
                     <div class="element-label"><span>Email Address</span></div>
-                    <input id="customer-email" type="email" class="element-is-input" data-validetta="required,email"
+                    <input name="email" id="customer-email" type="email" class="element-is-input" data-validetta="required,email"
                         required="">
                 </div>
+
+                <input type="hidden" id="referrer" name="referrer" value="{{ referrer }}">
 
                 <div id="custom-fields"></div>
                 <div class="element-wrap element-wrap-for-submit">

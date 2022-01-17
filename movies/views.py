@@ -8,6 +8,7 @@ from django.conf import settings
 import json
 import requests
 from .models import Movie, Seat, PaymentIntent, Payment
+import uuid
 
 from ipware import get_client_ip
 
@@ -43,40 +44,62 @@ def makeConfirmation(request):
 
     cost = Movie.objects.get(title=movie_title).price
 
-    header = {
-        "Authorization": f"Bearer {settings.PAYSTACK_SECRET}",
-        "Content-Type": "application/json"
-    }
+    referrer = uuid.uuid4().hex[:6].upper()
+    redirect_url = "/occupant_info/"
 
-    data = {
-        "name": "Confirmation of Movie Ticket",
-        "amount": int(cost*len(seat_numbers))*100,
-        "description": f"Confirmation for {len(seat_numbers)} ticket of {movie_title}",
-        "collect_phone": True,
-        # "redirect_url": f"{settings.HOST_URL}/payment_confirm/"
-    }
-
-    response = requests.post('https://api.paystack.co/page',
-                             json=data, headers=header)
-
-    if response.status_code == 200:
-        response_data = response.json()
-        slug = response_data["data"]["slug"]
-        redirect_url = f"https://paystack.com/pay/{slug}"
-
-        PaymentIntent.objects.create(referrer=redirect_url,
+    PaymentIntent.objects.create(referrer=referrer,
                                      movie_title=movie_title,
                                      seat_number=seat_numbers)
 
-        return JsonResponse({
-            "payment_url": redirect_url
-        })
-
     return JsonResponse({
-        "error": "sorry service is not available"
+        "payment_url": redirect_url,
+        "referrer": referrer,
     })
 
+def occupantInfo (request):
+    if request.method == "GET":
+        referrer = request.GET.get('referrer', '')
+        context = dict()
+        context['referrer'] = referrer
+        return render(request, "form.html", context=context)
+    elif request.method == "POST":
+        first_name = request.POST["first_name"]
+        last_name = request.POST["last_name"]
+        phone_number = request.POST["phone_number"]
+        email = request.POST["email"]
 
+        referrer = request.POST["referrer"]
+        print(referrer)
+
+        payment_intent = PaymentIntent.objects.get(referrer=referrer)
+
+        movie_title = payment_intent.movie_title
+        movie = Movie.objects.get(title=movie_title)
+        booked_seat = json.loads(payment_intent.seat_number)
+
+        for seat_no in booked_seat:
+            seat = Seat.objects.create(seat_no=seat_no,
+                                        occupant_first_name=first_name,
+                                        occupant_last_name=last_name,
+                                        occupant_email=email)
+
+            movie.booked_seats.add(seat)
+            movie.save()
+
+            Payment.objects.create(first_name=first_name,
+                                    last_name=last_name,
+                                    email=email,
+                                    phone=phone_number,
+                                    movie=movie,
+                                    seat_no=seat_no)
+
+            # send email
+            mailing.delay(first_name, email, seat_no, movie_title)
+        return HttpResponse(200)
+    
+    return HttpResponseForbidden()
+
+'''
 @csrf_exempt
 def webhook(request):
     if request.method == "POST":
@@ -117,10 +140,11 @@ def webhook(request):
                                            seat_no=seat_no)
 
                     # send email
-                    mailing.delay(first_name, email, seat_no, movie_title)
+                    #mailing.delay(first_name, email, seat_no, movie_title)
                 return HttpResponse(200)
 
     return HttpResponseForbidden()
+'''
 
 
 def paymentConfirm(request):
