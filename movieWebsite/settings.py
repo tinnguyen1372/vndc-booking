@@ -30,7 +30,7 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = False
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost",
-                 "0.0.0.0", "vndc-vnntu.herokuapp.com"]
+                 "0.0.0.0", "vnntu-vndc.herokuapp.com"]
 
 
 # Application definition
