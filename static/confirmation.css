@@ -136,3 +136,11 @@ body {
     color: rgb(190, 190, 71);
 
 }
+
+div.alert{
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

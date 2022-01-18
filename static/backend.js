@@ -57,6 +57,12 @@ cta_btn.addEventListener("click", e => {
     const movie_title = movieSelect.options[movieSelect.selectedIndex].id
     const seat_list = JSON.parse(localStorage.getItem("selectedSeats"))
 
+    // var selectedSeats = document.querySelectorAll('.row .seat.selected');
+    // Array.from(document.querySelectorAll('.row .seat.selected')).forEach(function (el) {
+    //     el.classList.remove('selected'); 
+    //     el.classList.add('occupied');
+    // });
+
     if (seat_list !== null && seat_list.length > 0) {
         data = {
             movie_title,
@@ -71,6 +77,8 @@ cta_btn.addEventListener("click", e => {
             } else {
                 console.log('error')
             }
+
+
         }).catch(e => {
             console.log(e)
         })

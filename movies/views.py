@@ -86,7 +86,7 @@ def occupantInfo(request):
             except:
                 seat_check_for_occupied = None
             if seat_check_for_occupied:
-                return HttpResponse("Seat is already booked")
+                return render(requests, "seat_booked.html")
             else:
                 seat = Seat.objects.create(seat_no=seat_no,
                                            occupant_first_name=first_name,
