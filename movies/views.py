@@ -1,6 +1,7 @@
 from movies.tasks import mailing
 from django.http.response import HttpResponse, HttpResponseForbidden, HttpResponseRedirect
-from movies.helpers import email_customer, verify_webook
+from movies.helpers import email_customer
+# , verify_webook
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -96,7 +97,7 @@ def occupantInfo(request):
                                    seat_no=seat_no)
 
             # send email
-            mailing.delay(first_name, email, seat_no, movie_title)
+            email_customer(first_name, seat_no, movie_title, email)
         return HttpResponseRedirect('/payment_confirm/')
 
     return HttpResponseForbidden()
