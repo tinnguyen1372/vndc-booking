@@ -27,7 +27,7 @@ body {
 	position: relative;
 	display: inline-block;
 }
-p.text{
+p#text{
   display:none !important;
 }
 .button::before,
@@ -90,10 +90,15 @@ p.text{
   background-color: hsla(20, 4%, 27%, 0.163);
 }
 p.text{
-  color:#000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+p.text{
+  color:#151e39;
 }
 p.text span {
-  color: #000;
+  color: #151e39;
 }
 
 .purchase_btn{
@@ -200,7 +205,7 @@ p.text span {
     font-size: 12px;
   }
   .purchase_btn{
-    transform: translateX(-3px);
+    transform: translateX(3px);
   }
 }
 
@@ -307,7 +312,7 @@ p.text {
   font-size: 12px;
 }
 .purchase_btn{
-  transform: translateX(-4px);
+  transform: translateX(4px);
 }
 
 
@@ -424,7 +429,7 @@ p.text {
   font-size:12px;
 }
 .purchase_btn{
-  transform: translateX(-4px);
+  transform: translateX(4px);
   transform: scale(0.8);
   top:-20px;
 }
@@ -534,7 +539,7 @@ p.text {
   }
 
   .purchase_btn{
-    transform: translateX(-6px);
+    transform: translateX(6px);
   }
   
 
@@ -649,7 +654,7 @@ p.text {
     font-size:14px;
   }
   .purchase_btn{
-    transform: translateX(-4px);
+    transform: translateX(4px);
     transform: scale(0.8);
     top:-20px;
 }
@@ -763,7 +768,7 @@ p.text {
   font-size:16px;
 }
 .purchase_btn{
-  transform: translateX(-4px);
+  transform: translateX(4px);
 }
 }
 /* Large devices (laptops/desktops, 992px and up) */
@@ -868,7 +873,7 @@ p.text {
     font-size: 16px;
   }
   .purchase_btn{
-    transform: translateX(-8px);
+    transform: translateX(8px);
   }
 
 }
@@ -984,7 +989,7 @@ p.text {
   font-size:14px;
 }
 .purchase_btn{
-  transform: translateX(-4px);
+  transform: translateX(4px);
   transform: scale(0.8);
   top:-20px;
 }
@@ -1092,7 +1097,7 @@ p.text {
     font-size: 18px;
   }
   .purchase_btn{
-    transform: translateX(-10px);
+    transform: translateX(10px);
   }
 }
 
