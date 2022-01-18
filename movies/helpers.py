@@ -26,7 +26,7 @@ def email_customer(first_name, seat_no, movie_title, email):
     render_msg = render_to_string("email_template.html", {
         "first_name": first_name,
         "movie_title": movie_title,
-        "seat_no": d[seat_no]
+        "seat_no": d[seat_no-1]
     })
 
     send_mail(

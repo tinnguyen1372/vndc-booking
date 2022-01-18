@@ -94,7 +94,7 @@ body {
     background-color:#FFBBEC;
 }
 
-.movie__description {
+.movie__description,a {
     font-size: 14px;
 }
 
