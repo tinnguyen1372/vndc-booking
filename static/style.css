@@ -108,6 +108,16 @@ p.text span {
     background-size: 100% 100%;
     background-position:center center;
   }
+  span.row_name{
+    font-size: 8px;
+    width: 5px;
+    height: 8px;
+    margin: 2px;
+    margin-right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .movie-container {
     margin: 5px 0;
     margin-top: 25px;
@@ -207,6 +217,16 @@ p.text span {
   .movie-container {
     margin: 5px 0;
     margin-top: 30px;
+  }
+  span.row_name{
+    font-size: 10px;
+    width: 8px;
+    height: 9px;
+    margin: 3px;
+    margin-right: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
 .movie-container select {
@@ -312,7 +332,16 @@ p.text {
     font-size: 10px;
     margin: 5px 0;
   }
-
+  span.row_name{
+    font-size: 6px;
+    width: 6px;
+    height: 6px;
+    margin: 1px;
+    margin-right: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 .movie-container select {
   background-color: #fff;
   border: 0;
@@ -335,8 +364,8 @@ p.text {
   height: 6px;
   width: 8px;
   margin: 1px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 
@@ -411,6 +440,16 @@ p.text {
     background-size: 100% 100%;
     background-position:center center;
   }
+  span.row_name{
+    font-size: 8px;
+    width: 8px;
+    margin: 2px;
+    margin-right: 8px;
+    height: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .movie-container {
     margin: 5px 0;
     margin-top: 32px;
@@ -438,8 +477,8 @@ p.text {
     height: 8px;
     width: 12px;
     margin: 2px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
   }
 
   .seat:nth-of-type(2) {
@@ -513,7 +552,16 @@ p.text {
       margin-top:50px;
       font-size: 14px;
     }
-
+    span.row_name{
+      font-size: 8px;
+      width: 12px;
+      height: 8px;
+      margin: 2px;
+      margin-right: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     .showcase{
       font-size: 14px;
       margin: 5px 0 3px;
@@ -541,8 +589,8 @@ p.text {
     height: 8px;
     width: 10px;
     margin: 2px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
   }
 
 
@@ -618,7 +666,16 @@ p.text {
     margin-top:30px;
     font-size: 20px;
   }
-
+  span.row_name{
+    font-size: 14px;
+    width: 12px;
+    margin: 4px;
+    margin-right: 10px;
+    height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .showcase{
     font-size: 20px;
     margin: 30px 0 20px;
@@ -646,8 +703,8 @@ p.text {
   height: 16px;
   width: 20px;
   margin: 4px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 
@@ -717,6 +774,17 @@ p.text {
     background: url("/static/media/VNDC_992.png") no-repeat 0 0;
     background-size: 100% 100%;
     background-position:center center;
+  }
+
+  span.row_name{
+    font-size: 12px;
+    width: 10px;
+    height: 10px;
+    margin: 2px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .movie-container {
     margin: 5px 0;
@@ -823,6 +891,16 @@ p.text {
     font-size: 14px;
     margin: 5px 0 3px;
   }
+  span.row_name{
+    font-size: 8px;
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 .movie-container select {
   background-color: #fff;
@@ -844,10 +922,10 @@ p.text {
 
 .seat {
   height: 8px;
-  width: 10px;
+  width: 9px;
   margin: 2px;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 
@@ -926,7 +1004,16 @@ p.text {
     margin: 5px 0;
     margin-top: 50px;
   }
-  
+  span.row_name{
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .movie-container select {
     background-color: #fff;
     border: 0;
