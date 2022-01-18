@@ -81,7 +81,10 @@ def occupantInfo(request):
         booked_seat = json.loads(payment_intent.seat_number)
 
         for seat_no in booked_seat:
-            seat_check_for_occupied = Seat.objects.get(seat_no=seat_no)
+            try:
+                seat_check_for_occupied = Seat.objects.get(seat_no=seat_no)
+            except:
+                seat_check_for_occupied = None
             if seat_check_for_occupied:
                 return HttpResponse("Seat is already booked")
             else:

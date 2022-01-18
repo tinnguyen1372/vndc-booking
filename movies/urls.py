@@ -7,5 +7,5 @@ urlpatterns = [
     path('confirmation/', makeConfirmation, name="confirmation"),
     path('occupant_info/', occupantInfo, name="occupant_info"),
     #path('webhook/', webhook, name="webhook"),
-    path('payment_confirm/', paymentConfirm, name="payment-confirm")
+    path('payment_confirm/', paymentConfirm, name="payment-confirm"),
 ]
