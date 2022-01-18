@@ -34,6 +34,7 @@ def email_customer(first_name, seat_no, movie_title, email):
     send_mail(
         "[VNDC XXII]: Xác nhận đặt vé thành công",
         render_msg,
-        settings.EMAIL_HOST_USER[email, ],
+        settings.EMAIL_HOST_USER, 
+        [email, ],
 
     )
