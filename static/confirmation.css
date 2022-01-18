@@ -29,6 +29,15 @@ body {
    overflow: hidden;
 }
 
+.info{
+    margin-top: 10px;
+    font-size:10px;
+}
+
+.info a{
+    margin-top: 20px;
+    font-size: 12px;
+}
 .movie__hero {
   flex: 0 0 45%;
 }
@@ -94,11 +103,9 @@ body {
     background-color:#fd28c1c7;
 }
 
-.movie__description,a {
-    font-size: 14px;
-}
-a{
-    margin-top: 10px;
+.movie__description {
+    margin-top: 30px;
+    font-size: 12px;
 }
 
 .movie__details {
