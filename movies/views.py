@@ -81,24 +81,28 @@ def occupantInfo(request):
         booked_seat = json.loads(payment_intent.seat_number)
 
         for seat_no in booked_seat:
-            seat = Seat.objects.create(seat_no=seat_no,
-                                       occupant_first_name=first_name,
-                                       occupant_last_name=last_name,
-                                       occupant_email=email)
+            seat_check_for_occupied = Seat.objects.get(seat_no=seat_no)
+            if seat_check_for_occupied:
+                return HttpResponse("Seat is already booked")
+            else:
+                seat = Seat.objects.create(seat_no=seat_no,
+                                           occupant_first_name=first_name,
+                                           occupant_last_name=last_name,
+                                           occupant_email=email)
 
-            movie.booked_seats.add(seat)
-            movie.save()
+                movie.booked_seats.add(seat)
+                movie.save()
 
-            Payment.objects.create(first_name=first_name,
-                                   last_name=last_name,
-                                   email=email,
-                                   phone=phone_number,
-                                   movie=movie,
-                                   seat_no=seat_no)
+                Payment.objects.create(first_name=first_name,
+                                       last_name=last_name,
+                                       email=email,
+                                       phone=phone_number,
+                                       movie=movie,
+                                       seat_no=seat_no)
 
-            # send email
-            email_customer(first_name, seat_no, movie_title, email)
-        return HttpResponseRedirect('/payment_confirm/')
+                # send email
+                email_customer(first_name, seat_no, movie_title, email)
+                return HttpResponseRedirect('/payment_confirm/')
 
     return HttpResponseForbidden()
 
