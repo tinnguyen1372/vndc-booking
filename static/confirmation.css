@@ -87,15 +87,18 @@ body {
 }
 
 .movie__tag--1 {
-  background-color: #A9C9FF;
+  background-color: rgb(236, 229, 15);
 }
 
 .movie__tag--2 {
-    background-color:#FFBBEC;
+    background-color:#fd28c1c7;
 }
 
 .movie__description,a {
     font-size: 14px;
+}
+a{
+    margin-top: 10px;
 }
 
 .movie__details {

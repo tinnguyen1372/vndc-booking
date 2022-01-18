@@ -32,7 +32,7 @@ def email_customer(first_name, seat_no, movie_title, email):
     })
 
     send_mail(
-        "[Django-Movies]:Thank you for purchasing a ticket",
+        "[VNDC XXII]: Xác nhận đặt vé thành công",
         render_msg,
         settings.EMAIL_HOST_USER,
         [email, ]
