@@ -165,8 +165,7 @@ input {
   
   .button:hover {
     transition-duration: 0.1s;
-    background-color: white;
-    color:black;
+    background-color: #745768d7;
   }
   
   .button:after {
@@ -180,11 +179,11 @@ input {
     height: 100%;
     opacity: 0;
     transition: all 0.5s;
-    box-shadow: 0 0 5px 20px white;
+    box-shadow: 0 0 5px 20px #151e39;
   }
   
   .button:active:after {
-    box-shadow: 0 0 0 0 white;
+    box-shadow: 0 0 0 0 #745768;
     position: absolute;
     border-radius: 10px;
     left: 0;
