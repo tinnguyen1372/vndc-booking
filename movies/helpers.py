@@ -54,4 +54,5 @@ def email_customer(first_name, seat_no, movie_title, email):
         to=[email, ],
     )
     mail.content_subtype = "html"
+    message.attach_file('../static/media/seat_layout.png')
     mail.send()
