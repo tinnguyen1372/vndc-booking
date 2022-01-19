@@ -42,7 +42,7 @@ def email_customer(first_name, seat_no, movie_title, email):
     #     [email, ],
 
     # )
-    message = get_template("email_template.html", {
+    message = get_template("email_template.html").render({
             "first_name": first_name,
             "movie_title": movie_title,
             "seat_no": d[seat_no-1]
@@ -51,8 +51,7 @@ def email_customer(first_name, seat_no, movie_title, email):
         subject="[VNDC XXII]: Xác nhận đặt vé thành công",
         body=message,
         from_email=settings.EMAIL_HOST_USER,
-        to=[email],
-        reply_to=[settings.EMAIL_HOST_USER],
+        to=[email, ],
     )
     mail.content_subtype = "html"
     mail.send()
