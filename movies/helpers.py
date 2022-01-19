@@ -14,6 +14,10 @@ from django.core.mail import send_mail
 #         return True
 #     return False
 
+from django.template import Context
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+
 
 def email_customer(first_name, seat_no, movie_title, email):
     d = {
@@ -25,16 +29,32 @@ def email_customer(first_name, seat_no, movie_title, email):
         110: 'F22', 111: 'F21', 112: 'F20', 113: 'F19', 114: 'F18', 115: 'F17', 116: 'F16', 117: 'F15', 118: 'F14', 119: 'F13', 120: 'F12', 121: 'F11', 122: 'F10', 123: 'F9', 124: 'F8', 125: 'F7', 126: 'F6', 127: 'F5',
         128: 'F4', 129: 'F3', 130: 'F2', 131: 'F1'
     }
-    render_msg = render_to_string("email_template.html", {
-        "first_name": first_name,
-        "movie_title": movie_title,
-        "seat_no": d[seat_no-1]
-    })
+    # render_msg = render_to_string("email_template.html", {
+    #     "first_name": first_name,
+    #     "movie_title": movie_title,
+    #     "seat_no": d[seat_no-1]
+    # })
 
-    send_mail(
-        "[VNDC XXII]: Xác nhận đặt vé thành công",
-        render_msg,
-        settings.EMAIL_HOST_USER, 
-        [email, ],
+    # send_mail(
+    #     "[VNDC XXII]: Xác nhận đặt vé thành công",
+    #     render_msg,
+    #     settings.EMAIL_HOST_USER, 
+    #     [email, ],
 
+    # )
+    message = get_template("email_template.html").render(Context({
+            "first_name": first_name,
+            "movie_title": movie_title,
+            "seat_no": d[seat_no-1]
+    }))
+    mail = EmailMessage(
+        subject="[VNDC XXII]: Xác nhận đặt vé thành công",
+        body=message,
+        from_email=settings.EMAIL_HOST_USER,
+        to=[email],
+        reply_to=[settings.EMAIL_HOST_USER],
     )
+    mail.content_subtype = "html"
+    return mail.send()
+
+
