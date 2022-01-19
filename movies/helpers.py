@@ -55,5 +55,3 @@ def email_customer(first_name, seat_no, movie_title, email):
     )
     mail.content_subtype = "html"
     mail.send()
-
-
