@@ -42,11 +42,11 @@ def email_customer(first_name, seat_no, movie_title, email):
     #     [email, ],
 
     # )
-    message = get_template("email_template.html").render(Context({
+    message = get_template("email_template.html", {
             "first_name": first_name,
             "movie_title": movie_title,
             "seat_no": d[seat_no-1]
-    }))
+    })
     mail = EmailMessage(
         subject="[VNDC XXII]: Xác nhận đặt vé thành công",
         body=message,
