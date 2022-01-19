@@ -55,6 +55,6 @@ def email_customer(first_name, seat_no, movie_title, email):
         reply_to=[settings.EMAIL_HOST_USER],
     )
     mail.content_subtype = "html"
-    return mail.send()
+    mail.send()
 
 
